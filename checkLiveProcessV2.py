@@ -307,7 +307,7 @@ def create_connection(db_file):
 
 
 def updateProtocol(site0,site16,protocol,siteData1):
-    print('protocol',protocol,'; tryes',site16,' ',siteData1)
+    print('protocol "',protocol,'"; tryes "',site16,'"; ',siteData1)
     
     try:
         for x in range(0, 999):
@@ -346,12 +346,13 @@ def updateProtocol(site0,site16,protocol,siteData1):
             #         pass
             #     finally:
             #         break
-              if protocol=='':
+              if protocol!='https://' and protocol!='http://':
                 if site16=='None':
                   site16='0'
                 sql = " Update projects set tryesnotproxy=%(tryesnotproxy)s where id=%(id)s"
                 params={"tryesnotproxy":int(str(site16 or 0))+1,"id":site0}
                 curpg.execute(sql,params)
+                print('protocol update - ',int(str(site16 or 0)),'  ',siteData1)
                 # conpg.commit()
 
                 # for x in range(0, 99):
@@ -364,7 +365,7 @@ def updateProtocol(site0,site16,protocol,siteData1):
                 #     finally:
                 #       break
 
-                if int(str(site16 or 0))>17:#10
+                if False and int(str(site16 or 0))>1777:#10
                     sql = " Update projects set statussite=%(statussite)s where id=%(id)s"
                     params={"statussite":'not work',"id":site0}
                     curpg.execute(sql,params)

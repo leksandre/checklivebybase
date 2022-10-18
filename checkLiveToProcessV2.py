@@ -439,7 +439,7 @@ def check_lives(siteData, time1start):
         param1=["python3.6", "./checkLiveProcessV2.py"] 
         for d in siteData:
             # print(d)
-            param1.append(str([str(d[38]), str(d[3]), str(d[37])]))
+            param1.append(str([str(d[38]), str(d[3]), str(d[36])]))
         subprocess.run(param1)
         #
 
@@ -584,7 +584,7 @@ pgpswd = 'postgres'
 pghost = '10.72.1.117'
 pgport = '6432'
 pgschema = 'great_paraser'
-max_process_count = 64#32#16#64#32
+max_process_count = 16#64#32#16#8
 
 max_site_count = 699
 
