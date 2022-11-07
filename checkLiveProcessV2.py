@@ -569,8 +569,8 @@ def makeGetRequest(url, main, nproxy=False):
 
 pgdb = 'great_paraser'
 pguser = 'postgres'
-pgpswd = 'blabla'
-pghost = '0.1.1.1'
+pgpswd = 'postgres'
+pghost = '10.72.1.117'
 pgport = '6432'
 pgschema = 'great_paraser'
 max_process_count = 399
